@@ -1,12 +1,12 @@
 atomic position
 
-rn5r/pp4pp/2p3Nn/5p2/1b2P1PP/8/PPP2P2/R1B1KB1R b KQ - 0 9
+`rn5r/pp4pp/2p3Nn/5p2/1b2P1PP/8/PPP2P2/R1B1KB1R b KQ - 0 9`
 
-can be set up at lichess analysis board as
+is the final position of this game
 
-https://lichess.org/analysis/atomic/rn5r/pp4pp/2p3Nn/5p2/1b2P1PP/8/PPP2P2/R1B1KB1R_b_KQ_-_0_9
+https://lichess.org/8C1ieYVr/white#17
 
-however chesspos cannot create an atomic position from this fen
+however chessops cannot create an atomic position from this fen
 
 to check type
 
@@ -15,7 +15,7 @@ cd chessops
 yarn
 ```
 
-this will roll up `test.js` and run it
+this will rollup `test.js` and run it:
 
 ```javascript
 import {makeFen, parseFen} from "../chessops/fen"
@@ -38,3 +38,7 @@ pos = Atomic.fromSetup(setup).value
 
 console.log("pos after Qxd7#", pos)
 ```
+
+the position before Qxd7 is created ok, but the one after Qxd7, the final position is created as `undefined`
+
+strangely enough chessops can make the move Qxd7 and report the resulting fen, but cannot set up from this fen an atomic position
